@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: Den
 desc: ''
-updated: 1712531280786
+updated: 1712612229496
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -143,6 +143,7 @@ Hay 2 limitaciones con este tipo de enlaces:
 * Con script se puede grabar una sesión
 * Como funcionaban las terminales (pc's no personales)
 * Permisos especiales (setuid root, setgid bit, sticky bit)
+* BSD
 
 
 ## Comandos básicos
@@ -207,11 +208,6 @@ r: read; w: write; x: execute
 ![alt text](image-36.png)
 ![alt text](image-37.png)
 
-## Comandos para administrar los permisos de los usuarios
-* Las cuentas de usuario están definidos en el directorio **/etc/passwd**
-* Los grupos están definidos en el directorio **/etc/group**
-* El archivo **/etc/shadow** guarda información de las contraseñas de cada usuario
-
 ## Ubuntu y sudo
 En ubuntu el usuario tiene los mismos permisos que el root usando sudo **(página 74)**
 
@@ -219,6 +215,11 @@ En ubuntu el usuario tiene los mismos permisos que el root usando sudo **(págin
 ![alt text](image-38.png)
 ![alt text](image-39.png)
 **otro caso en la página 75**
+
+## Comandos para administrar los permisos de los usuarios
+* Las cuentas de usuario están definidos en el directorio **/etc/passwd**
+* Los grupos están definidos en el directorio **/etc/group**
+* El archivo **/etc/shadow** guarda información de las contraseñas de cada usuario
 
 |COMANDO|USO|EJEMPLO
 |:---|:---|:---:|
@@ -232,6 +233,45 @@ En ubuntu el usuario tiene los mismos permisos que el root usando sudo **(págin
 |adduser| **consultar el comando**|consultar
 |useradd| **consultar el comando**|consultar
 |groupadd|**consultar el comando**|consultar
+
+## Arranque del sistema
+* Los archivos de arranque del sistema están en /etc. Estos archivos se denominan **init scripts** y se encargan de iniciar los servicios
+* Los procesos que se ejecutan en el fondo sin necesidad de un usuario en la interface se denominan **daemon programs(demonios)**
+
+## Estado de los procesos
+![alt text](image-40.png)
+
+
+
+## Comandos para administrar procesos
+* Para iniciar procesos en el fondo(que se inicie el procesos y se pueda seguir usando el bash) se añade & al final del comando
+
+|COMANDO|USO|EJEMPLO
+|:---|:---|:---|
+|ps|Muestra procesos del sistem. Las columnas de este campo son: TTY-Teletype se refire al terminal que controla el proceso, |ps. Con ps x muestra más información. ps aux simula el comportamiento de BSD y muestra estas opciones: ![alt text](image-41.png)
+|top|Muestra la actividad de los procesos en tiempo real, que se actualiza cada 3s|top. Significado de las columnas ![alt text](image-42.png)![alt text](image-43.png)
+|jobs|Muestra los trabajos que hemos arrancado desde la terminal|jobs
+|kill| Se usa para mandarle señales a un programa. Por defecto kill manda la señal de **TERM (Terminar)** pero también se pueden mandar las siguientes señales: ![alt text](image-44.png)![alt text](image-45.png). Debes ser el propietario de un proceso o ser root para poder enviarle señales con kill. Otras señales usadas por el sistema: ![alt text](image-46.png). Con **kill -l** se pueden ver las señales que se pueden enviar con kill| kill pid
+|killall|Se mandan señales a un programa específico o a un usuario **(profundizar)**|killall name_proceso
+
+## Más comandos relacionados con procesos
+![alt text](image-47.png)
+
+
+## El entorno
+En el entorno se almacenan datos de la sesión actual. Se guardan 2 tipos de datos: variables de shell que son bits puestos por el bash y las variables de entorno son el resto de datos. 
+
+## Algunas variables
+![alt text](image-48.png)
+![alt text](image-49.png)
+
+## Comandos para ver el entorno
+|COMANDO|USO|EJEMPLO
+|:---|:---|:---:|
+|printenv| Muestra las variables del entorno| printenv. Se puede ver el valor de una variable **printenv variable**
+|set| Muestra las variables de entorno, shell y funciones definidas del shell| set. Se puede ver el valor de una variable **echo $variable**
+|alias| Muestra los alias del sistema| alias
+
 
 
 
