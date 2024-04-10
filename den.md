@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: Den
 desc: ''
-updated: 1712612229496
+updated: 1712714508759
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -144,6 +144,8 @@ Hay 2 limitaciones con este tipo de enlaces:
 * Como funcionaban las terminales (pc's no personales)
 * Permisos especiales (setuid root, setgid bit, sticky bit)
 * BSD
+* PATH
+* POSIX
 
 
 ## Comandos básicos
@@ -260,10 +262,21 @@ En ubuntu el usuario tiene los mismos permisos que el root usando sudo **(págin
 
 ## El entorno
 En el entorno se almacenan datos de la sesión actual. Se guardan 2 tipos de datos: variables de shell que son bits puestos por el bash y las variables de entorno son el resto de datos. 
+* Para definir variables de entorno o añadir direcciones al entorno hay que modificar le archivo **.bash_profile** o .profile. Para todo lo demas se colocan los cambios en **.bashrc**
 
 ## Algunas variables
 ![alt text](image-48.png)
 ![alt text](image-49.png)
+
+## Archivos de arranque para sesiones de shell con login
+![alt text](image-50.png)
+
+## Archivos de arranque para sesiones de shell sin login
+![alt text](image-51.png)
+
+* En la sección INVOCATION de la man page de bash se cubren los archivos de arranque
+
+
 
 ## Comandos para ver el entorno
 |COMANDO|USO|EJEMPLO
@@ -271,6 +284,43 @@ En el entorno se almacenan datos de la sesión actual. Se guardan 2 tipos de dat
 |printenv| Muestra las variables del entorno| printenv. Se puede ver el valor de una variable **printenv variable**
 |set| Muestra las variables de entorno, shell y funciones definidas del shell| set. Se puede ver el valor de una variable **echo $variable**
 |alias| Muestra los alias del sistema| alias
+
+## Editores de texto
+**Para actualizar el archivo de .bashrc se puede usar el comando: source .bashrc**
+* VI
+* VIM, que es una versión mejorada de vi
+* nano
+* gedit, que es el editor de texto que viene por defecto en distros con GNOME
+* kedit
+* kwrite
+* kate
+
+## vi
+![alt text](image-52.png)
+vi en realidad es vim
+![alt text](image-53.png)
+
+* Cuando vim arranca lo hace en modo comando, significa que casi cualquier tecla es un comando, si se empieza a escribir entonces vim se vuelve loco
+* En la documentación de vim el modo comando se llama modo normal y los comandos ex (:) se llaman modo comando
+## Atajos para mover el cursor
+![alt text](image-55.png)
+
+|COMANDO|USO|EJEMPLO
+|:---|:---|:---:|
+:q| sirve para salir de vim|:q. Si vim no se cierra es porque tal vez no se han guardado cambios, entonces se ejecuta **:q!** para indicar que igual se quiere salir del programa. **prueba pulsando 2 veces la tecla esc si te pierdes**
+|i| Entra en modo *insert**. De esta forma ya se puede editar el texto| i
+|esc| Se vuelve al **modo comando**| esc
+|:w| Se guardan los cambios hechos en el archivo| Hay que estar en **modo comando** para poder ejecutar el comando
+|u| Deshace acciones| Hay que estar en modo comando y pulsar la u
+|a| Entra en modo inserción y el cuersor se posiciona la final de la línea| a
+|A| Posiciona el cursor al final de la línea| Hay que estar en el modo comando
+|o| Inserta una línea bajo la que está situada el cursor| o
+|O| Inserta una línea sobre la que está situada el cursor| O
+|comandos de borrado| Deben ser usados en modo comando|![alt text](image-56.png)
+
+
+
+
 
 
 
