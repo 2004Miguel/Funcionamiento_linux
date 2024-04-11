@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1712795729835
+updated: 1712855833920
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -147,6 +147,7 @@ Hay 2 limitaciones con este tipo de enlaces:
 * PATH
 * POSIX
 * Código ANSI
+* SHA256
 
 
 ## Comandos básicos
@@ -346,11 +347,37 @@ En el prompt solo aparece un signo de dolar
 Cada vez que aparece el prompt hace un beep. Por ejemplo cuando termina de ejecutar un comando
 * ![alt text](image-68.png)
 Se muestra información del usuario y la hora. **hora nombre_host signo_dolar**
-* ![alt text](image-69.png)
-Así modifique mi prompt string. \A= Muestra la hora actual en formato de 24hrs, horas minutos. "\#= Muestra el número de comandos que se han ejecutado en esa sesión". \j=los procesos que se están ejecutando.
-\u@: muestra el nombre de usuario y el símbolo de arroba. \h_: muestra el nombre del host sin el dominio y un guion bajo. \$: muestra un signo de dolar y 2 puntos. \w: muestra el directorio de trabajo actual
+![alt text](image-76.png)Así modifiqué mi prompt:**PS1=/\[\033[1;35m/\]\A \\# \j \\[\033[0;36m\\]\u@\h:\\$\\[\033[0;31m\\]\w\[\033[0m\\] **
+    
+
 * La cadena original del prompt era (está guardada en la variable **ps1_old**): 
 ![alt text](image-70.png)
+## Secuencias de escape para establecer colores
+![alt text](image-71.png)
+![alt text](image-72.png)
+![alt text](image-73.png)
+![alt text](image-74.png)
+![alt text](image-77.png)
+* **Para guardar permanentemente el prompt hay que agregar export PS1 al final del archivo**
+* Así se ven los colores de fondo:
+![alt text](image-75.png)
+
+## Gestión de paquetes (página 118)
+* Un paquete normalmente está destinado a una distribución concreta y solo funcionará en esa distribución 
+* La mayoria de las distribuicones se clasifican dentro de 2 tecnologías de familias de paquetes más grandes: **Debian (.deb) y Red Hat(.rpm)**
+![alt text](image-78.png)
+* **Herramientas de bajo y alto nivel**: Las primeras se encargan de instalar, eliminar y crear paquetes y las segundas realizan busquedas por medatadatos y resolocuión de dependencias (Las dependencias son scripts que necesitan ciertos paquetes para que puedan funcionar correctamente) al igual que la descarga e instalación de paquetes
+![alt text](image-79.png)
+![alt text](image-80.png)
+![alt text](image-81.png)
+![alt text](image-82.png)
+![alt text](image-83.png)
+![alt text](image-84.png)
+![alt text](image-85.png)
+![alt text](image-86.png)
+![alt text](image-87.png)
+![alt text](image-88.png)
+![alt text](image-89.png)
 
 
 
