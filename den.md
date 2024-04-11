@@ -1,8 +1,8 @@
 ---
 id: th13t6zh9qgxuou3hsx7p80
-title: Den
+title: La línea de comandos en Linux
 desc: ''
-updated: 1712714508759
+updated: 1712795729835
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -146,6 +146,7 @@ Hay 2 limitaciones con este tipo de enlaces:
 * BSD
 * PATH
 * POSIX
+* Código ANSI
 
 
 ## Comandos básicos
@@ -310,13 +311,47 @@ vi en realidad es vim
 :q| sirve para salir de vim|:q. Si vim no se cierra es porque tal vez no se han guardado cambios, entonces se ejecuta **:q!** para indicar que igual se quiere salir del programa. **prueba pulsando 2 veces la tecla esc si te pierdes**
 |i| Entra en modo *insert**. De esta forma ya se puede editar el texto| i
 |esc| Se vuelve al **modo comando**| esc
-|:w| Se guardan los cambios hechos en el archivo| Hay que estar en **modo comando** para poder ejecutar el comando
+|:w| Se guardan los cambios hechos en el archivo. Si se quiere guardar una copia del archivo entonces **:w name_new_file** y se creará una copia| Hay que estar en **modo comando** para poder ejecutar el comando
 |u| Deshace acciones| Hay que estar en modo comando y pulsar la u
 |a| Entra en modo inserción y el cuersor se posiciona la final de la línea| a
 |A| Posiciona el cursor al final de la línea| Hay que estar en el modo comando
 |o| Inserta una línea bajo la que está situada el cursor| o
 |O| Inserta una línea sobre la que está situada el cursor| O
 |comandos de borrado| Deben ser usados en modo comando|![alt text](image-56.png)
+|Comandos de copiado|Se usa en modo comando|![alt text](image-57.png)
+|p| Pega texto del portapapeles debajo de la línea sobre la que está el cursor| d además de borrar sirve como cortado porque si borra algo con d, se puede pegar con p
+|P| Pega el texto sobre la línea en la que está el cursor
+|J| subre líneas a la línea  actual que estén por debajo de la posición del cursor| J
+|f| Se usa para buscar coincidencia en **1 línea**, para repetir la busqueda se presiona **;**| fa posiciona el cursor en la primera a que encuentre
+|/| busca patrones en todo el texto| Primero se posiciona al inicio del archivo y luego se utiliza el comando
+|n| Se repite la busqueda hecha con **/**| Después de hacer la primera busqueda y de haber presionado enter, se presiona n para volver a buscar en otra posición
+|Busqueda y reemplazo global|![alt text](image-58.png)|![alt text](image-59.png) si se le agrega **c**, vim parará cada vez que encuentre una coincidencia y pregunta si queremos hacer el reemplazo ![alt text](image-60.png) De esta forma aparece la pregunta: ![alt text](image-61.png) Cada una de las opciones significa: ![alt text](image-62.png)
+|Editando varios archivos| vim file1 file 2| vim file1 file2
+|:n| cambia al siguiente archivo que esté abierto| :n
+|:N| Cambia al anterior archivo| :N
+|:buffers|Muestra los archivos que están siendo editados| :buff + tab para ver varias coincidencias con el patrón. Se puede usar **:buffer num** para cambiar al tercer archivo por ejemplo
+|:e file_name| permite abrir más archivos para editarlos| cuando se abren archivos de esta forma, no funcionan los comandos :n y :N, para cambiar entre archivos hay que usar el comando :buffer
+|:r| se usa para insertar un archivo dentro de otro| :r file_name
+|ZZ| Guarda el archivo actual y cierra vim|En modo comando
+
+## Personalizando la cadena del PROMPT
+* La forma del prompt es definida por la variable **PS1(Prompt String One)**
+![alt text](image-63.png)
+![alt text](image-64.png)
+* ![alt text](image-65.png)
+En este caso, la cadena del prompt va a aparecer vacía, osea que el prompt no se ve pero está ahí
+* ![alt text](image-66.png)
+En el prompt solo aparece un signo de dolar
+* ![alt text](image-67.png)
+Cada vez que aparece el prompt hace un beep. Por ejemplo cuando termina de ejecutar un comando
+* ![alt text](image-68.png)
+Se muestra información del usuario y la hora. **hora nombre_host signo_dolar**
+* ![alt text](image-69.png)
+Así modifique mi prompt string. \A= Muestra la hora actual en formato de 24hrs, horas minutos. "\#= Muestra el número de comandos que se han ejecutado en esa sesión". \j=los procesos que se están ejecutando.
+\u@: muestra el nombre de usuario y el símbolo de arroba. \h_: muestra el nombre del host sin el dominio y un guion bajo. \$: muestra un signo de dolar y 2 puntos. \w: muestra el directorio de trabajo actual
+* La cadena original del prompt era (está guardada en la variable **ps1_old**): 
+![alt text](image-70.png)
+
 
 
 
