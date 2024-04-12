@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1712855833920
+updated: 1712886358447
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -378,6 +378,28 @@ Se muestra información del usuario y la hora. **hora nombre_host signo_dolar**
 ![alt text](image-87.png)
 ![alt text](image-88.png)
 ![alt text](image-89.png)
+
+## Medios de almacenamiento(No me interesa en este momento) página 133
+* El archivo /etc/fstab  lista los dispositivos del equipo
+* Un punto de montaje es un directorio en algún lugar del árbol del sistema de archivos
+* El buffer es un dispositivo que se implementó en las impresoras para no detener el trabajo del pc, este se instalaba en medio del pc y la impresora. En linux, se van a tener los datos que son leídos y necesitan ser escritos en otro dispositivo en memoria por el mayor tiempo posible para impedir el contacto con dispositivos lentos. No significa que linux esté "utilizando" la memoria significa que linux está sacando el mayor provecho de buffering que pueda
+
+|COMANDO|USO
+|:---|:---:|
+|mount| Sirve para montar sistemas de archivos. Si se utiliza sin argumentos lista los sistemas de archivos montados
+|free|muestra info sobre el uso de memoria
+
+## Redes
+|COMANDO|USO|EJEMPLO
+|:---|:---|:---:|
+|ping| Se usa para escanear una red. Este comand manda paquetes **IMCP ECHO_REQUES** a un host especificado. Es posible configurar la mayoria de los dispositivos de red para que ignoren estos paquetes haciendo más seguro el host o indetectable, también es común configurar el corta fuegos para bloquear el tráfico de ICMP| ping linuxcommand.org
+|traceroute o tracepath| Muestra una lista de todos los hops o saltos que el tráfico hace para llegar desde el sistema local al host especificado| traceroute google.com
+|netstat| Se usa para examinar diferentes configuraciones de la red| netstat. Con los argumentos -ie muestra más info
+|ftp| Es un cliente ftp que permite conexiones remotas usando este protocolo (no es recomendabla ya que los datos viajan de forma plana)| ftp serverftp
+|lftp| Es un cliente mejorado del protocolo ftp|
+|wget| Es útil para descargar archivos de páginas web e incluso sitios enteros| wget link_página
+|ssh (pag 149)| Es igual que ftp solo que la conexión es encriptada y host remoto se verifica para que en realidad sea quien dice ser| ssh remote_server
+|Tunelización ssh| Es usado para ejecutar una aplicación con GUI en un sistema remoto y que la pantalla aparezca en local| ![alt text](image-90.png)
 
 
 
