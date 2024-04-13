@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1712886358447
+updated: 1713014356702
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -400,6 +400,26 @@ Se muestra información del usuario y la hora. **hora nombre_host signo_dolar**
 |wget| Es útil para descargar archivos de páginas web e incluso sitios enteros| wget link_página
 |ssh (pag 149)| Es igual que ftp solo que la conexión es encriptada y host remoto se verifica para que en realidad sea quien dice ser| ssh remote_server
 |Tunelización ssh| Es usado para ejecutar una aplicación con GUI en un sistema remoto y que la pantalla aparezca en local| ![alt text](image-90.png)
+
+## Comandos para encontrar archivos
+El operador de tubería (|) se reemplaza por la palabra pip para no interferir con el formato de las tablas
+* Nombres simpáticos: ![alt text](image-102.png) pag 164
+
+|COMANDO|USO|EJEMPLO
+|:---|:---|:---:|
+|locate|Busca en la base de datos de nombre de archivos todo aquel que coincida con la cadena dada| locate /bin/zip, muestra todos los archivos que terminen en el directorio **bin y empiecen con zip**. locate zip pip grep bin, en este caso se buscan todos los archivos que tengan zip en su nombre y con grep solo se muestran los archivos que tengan zip y bin en su nombre
+|find| Busca archivos en directorios y subdirectorios por una gran variedad de atributos. La forma como find funciona es atravez de **opciones, tests y acciones**| find ~ muestra todos los archivos que haya en todas las carpetas del home
+|test| es una aplicación de find| find ~ -type d pip wc -l, esta instrucción solo va a mostrar los directorios que hay en el home. find ~ -type f pip wc -l se muestran los archivos normales en el home
+|![alt text](image-91.png)| Estos son los test más comunes que soporta find| se usa igual que en los ejemplos anteriores. ![alt text](image-92.png)
+|unidades de almacenamiento en find| ![alt text](image-93.png)
+|test más comunes| ![alt text](image-94.png)![alt text](image-95.png)![alt text](image-96.png)![alt text](image-97.png)
+|operadores| Se usan junto con los test para combinarlos y hacer busquedas más complejas|
+|algunos operadores|![alt text](image-98.png)| find ~ \(-type f -not -perm 0600 \) -or \(-type -d -not -perm 0700 \). Este comando busca todos los archivos que no tengan permiso 0600 o si es un directorio que no tenga permiso 0700
+|Acciones predefinidas de find| Se utilizan para hacer algo con el resultado de find| ![alt text](image-99.png)
+|accciones definidas por el usuario| ![alt text](image-100.png)|Para mejorar la eficiencia, se puede cambiar el ; por un +, esto hace que el comando deseado solo se ejecute una vez 
+|wargs| También se utiliza para mejorar la eficacia de find, con la caracteristica de que este comando puede utilizar la entrada estándar y la convierte en argumentos para el comando que se quiere ejecutar|![alt text](image-101.png)
+|opciones| ![alt text](image-103.png)|
+
 
 
 
