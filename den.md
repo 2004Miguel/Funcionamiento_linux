@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1713014356702
+updated: 1713140740470
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -418,9 +418,40 @@ El operador de tubería (|) se reemplaza por la palabra pip para no interferir c
 |Acciones predefinidas de find| Se utilizan para hacer algo con el resultado de find| ![alt text](image-99.png)
 |accciones definidas por el usuario| ![alt text](image-100.png)|Para mejorar la eficiencia, se puede cambiar el ; por un +, esto hace que el comando deseado solo se ejecute una vez 
 |wargs| También se utiliza para mejorar la eficacia de find, con la caracteristica de que este comando puede utilizar la entrada estándar y la convierte en argumentos para el comando que se quiere ejecutar|![alt text](image-101.png)
-|opciones| ![alt text](image-103.png)|
+|opciones| ![alt text](image-103.png)
+
+## Comprimiendo archivos sin perdida
+* zcat
+* zless
+* bzip2 
+
+|COMANDO|USO|EJEMPLO
+|:---|:---|:---:|
+|gzip y gunzip| se usan para comprimir y descomprimir sin perdida| **gzip foo.txt** comprime el archivo que resulta en otro archivo con la extención gz y gunzip foo.txt **descomprime el archivo**
+|Alguanas opciones de gzip|![alt text](image-104.png)![alt text](image-105.png)
 
 
+## Empaquetar archivos(página 171)
+
+|COMANDO|USO|EJEMPLO
+|:---|:---|:---:|
+|tar| Es la herramienta clásica en unix para empaquetado| tar modo[opciones] ruta...
+|modos de tar| ![alt text](image-106.png)|![alt text](image-107.png)
+
+## zip
+Es tanto una herramienta de empaquetado como de compresión.
+
+## Sincronización de archivos y directorios
+rsync es la herramienta preferida para este tipo de trabajo. Leer más sobre esta herramienta ya que puede ser útil al momento de hacer copias de seguiridad en otro dispositivo que esté en la red local
+
+## Expresiones regulares
+son notaciones simbólicas usadas para identificar patrones en el texto.
+![alt text](image-108.png)
+* Los literales son las coincidencias exactas, por ejemplo cuando se busca que la palabra "hola" esté en el nombre de un archivo
+* Los metacaracteres son signos que se usan para hacer más complejo el patrón de busqueda. Son estos: ![alt text](image-109.png) ![alt text](image-110.png)
+* ^: Hace que la coincidencia solo ocurra si el patrón se encuentra al principio de la línea: ![alt text](image-111.png)
+* $: Hace que la coincidencia solo ocurra si el patrón se encuentra al final de la línea: ![alt text](image-112.png)
+* ![alt text](image-113.png)
 
 
 
