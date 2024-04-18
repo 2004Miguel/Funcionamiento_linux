@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1713140740470
+updated: 1713446097197
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -148,6 +148,8 @@ Hay 2 limitaciones con este tipo de enlaces:
 * POSIX
 * Código ANSI
 * SHA256
+* IEEE 1003 (API's)
+* XML
 
 
 ## Comandos básicos
@@ -444,7 +446,7 @@ Es tanto una herramienta de empaquetado como de compresión.
 ## Sincronización de archivos y directorios
 rsync es la herramienta preferida para este tipo de trabajo. Leer más sobre esta herramienta ya que puede ser útil al momento de hacer copias de seguiridad en otro dispositivo que esté en la red local
 
-## Expresiones regulares
+# Expresiones regulares
 son notaciones simbólicas usadas para identificar patrones en el texto.
 ![alt text](image-108.png)
 * Los literales son las coincidencias exactas, por ejemplo cuando se busca que la palabra "hola" esté en el nombre de un archivo
@@ -452,6 +454,40 @@ son notaciones simbólicas usadas para identificar patrones en el texto.
 * ^: Hace que la coincidencia solo ocurra si el patrón se encuentra al principio de la línea: ![alt text](image-111.png)
 * $: Hace que la coincidencia solo ocurra si el patrón se encuentra al final de la línea: ![alt text](image-112.png)
 * ![alt text](image-113.png)
+* **Linux tiene un diccionario en /usr/share/dict**
+* []: Se usan para encontrar un caracter específico de una colección: ![alt text](image-114.png) 
+Dentro de los corchetes los metacaracteres pierden su significado excepto **^(símbolo de intercalación)** que se usa para indicar negación solo si es el primer carácter sino pierde su significado y **-** que se usa para indicar un rango de caracteres. **grep -h '\[^bg]zip' dirlist*.txt** va a buscar todos los nombres de archivo que NO empiezan con b ni g. **grep -h '[A-Z]' dirlist*.txt** va a buscar todos los archivos que empiecen con cualquier letra mayúscula. Se pueden expresar varios rangos así: **grep -h '^[A-Za-z0-9]' dirlist*.txt**, para que el guión pierda su significado debe ir al inicio
+![alt text](image-115.png)![alt text](image-116.png)
+* Las expresiones regulares están dividas en 2 grupos, **expresiones regulares básicas (BRE)** y **expresiones regulares extendidas(ERE)**. La diferencia es que con BRE se reconocen los caracteres: ^, $, ., [], * y con ERE funcionan los metacaracteres: (), {}, ?, +, |
+![alt text](image-117.png)
+
+## Alternancia
+Permite coincidencias dentro de una serie de cadenas y otras expresiones regulares, ejemplo:
+![alt text](image-118.png)
+Esto siginifica que la salida estándar del comando echo se entuba al grep si se tiene AAA o BBB coinciden.
+Otro ejemplo: 
+![alt text](image-119.png)
+
+## Cuantificadores
+Las expresiones regulares extendidas (ERE) soportan el número de veces que se encuentra un elemento
+#### ? 
+![alt text](image-120.png)
+### *
+![alt text](image-121.png)
+### +
+![alt text](image-122.png)
+### {}
+![alt text](image-124.png)
+
+## Procesado de texto
+
+|COMANDO|USO|EJEMPLO|
+|:---|:---|:---:|
+|cat| se usa para ver y crear texto| el argumento -A muestra los caracteres no imprimibles como **espacio, tabulación, salto de línea, etc**. El argumento -n numera las líneas y el -s suprime las líneas en blanco
+|uniq| Elimina las líneas duplicadas| Para que uniq haga su trabajo debe ser usado con sort: sort foo.txt pip uniq
+|patch| se usa para actualizar archivos de texto| ![alt text](image-125.png)
+|tr| permite hacer una busqueda y reemplazo| ![alt text](image-126.png)![alt text](image-127.png)
+
 
 
 
