@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1713446097197
+updated: 1713803349938
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -150,6 +150,7 @@ Hay 2 limitaciones con este tipo de enlaces:
 * SHA256
 * IEEE 1003 (API's)
 * XML
+* ROT13(ofuscación de texto)
 
 
 ## Comandos básicos
@@ -336,6 +337,15 @@ vi en realidad es vim
 |:e file_name| permite abrir más archivos para editarlos| cuando se abren archivos de esta forma, no funcionan los comandos :n y :N, para cambiar entre archivos hay que usar el comando :buffer
 |:r| se usa para insertar un archivo dentro de otro| :r file_name
 |ZZ| Guarda el archivo actual y cierra vim|En modo comando
+|:syntax on| se usa para cambiar el modo de vim a modo de resaltado de sintáxis para escribir scripts| :syntax on. Si no funciona, hay otra alternativa :set syntax=sh
+|:set hlsearch| para resaltar el resultado de una busqueda|activa la opción de destacar los resultados de búsqueda.Digamos que buscamos la palabra echo, Con esta opción activada, cada instancia de la palabra será destacada.
+|:set tabstop=4|establece el número de columnas ocupadas por un carácter tabulador. Por defecto son 8 columnas. Estableciendo el valor a 4 (que es una práctica común) permite a las líneas largas ajustarse más fácilmente a la pantalla.| usar en modo comando
+|:set autoindent|activa la función auto indentado. Esto hace que vim indente una nueva línea la misma cantidad que la línea recién escrita. Esto acelera la escritura en muchos tipos de construcción de programas. Para detener la indentación, pulsa Ctrl-d.
+
+Estos cambios pueden hacerse permanentes añadiendo estos comandos (sin los dos puntos delante)
+a tu archivo ~/ .vimrc.
+
+
 
 ## Personalizando la cadena del PROMPT
 * La forma del prompt es definida por la variable **PS1(Prompt String One)**
@@ -487,6 +497,48 @@ Las expresiones regulares extendidas (ERE) soportan el número de veces que se e
 |uniq| Elimina las líneas duplicadas| Para que uniq haga su trabajo debe ser usado con sort: sort foo.txt pip uniq
 |patch| se usa para actualizar archivos de texto| ![alt text](image-125.png)
 |tr| permite hacer una busqueda y reemplazo| ![alt text](image-126.png)![alt text](image-127.png)
+
+# Aspell
+Es un corrector ortográfico pero de inglés. ![alt text](image-128.png)
+
+# Herramientas de formateo simple (pag 229)
+# Compilando programas
+Compilar es traducir el código fuente de un programa (código escrito con un lenguaje de programación) al lenguaje máquina (código binario).
+Los primeros programas fueron escritos en código binario, debido a su complejidad se vio la necesidad de desarrollar una manera más amigable de desarrollo y de ahí nace el lenguaje ensamblador y después los lenguajes de alto nivel. 
+Algunos compiladores pasan el código fuente a lenguaje ensamblador y de ahí se usa un ensamblador para terminar de pasar el código a lenguaje máquina.
+
+Los lenguajes **de script o interpretados** se traduce línea por línea al lenguaje máquina cada vez que se van a ejecutar lo que hace que sean más lentos que un lenguaje compilado.
+
+El motivo por el que los lenguajes interpretados se popularizaron es porque a medida que un programa crece el tiempo de compilación se vuelve más lento y esté tiempo se reduce con los interpretes.
+
+El **enlazador** son rutinas (librerias) del sistema que hacen tareas comunes como por ejemplo abrir un archivo. La idea es que no se despilfarren recursos por cada programa que puede hacer eso sino establecer una porción de código que todos los programas usen para realizar la tarea.
+
+## Compilando un programa en C
+Para compilar se necesita el compilador, enlazador y make. 
+El compilador C usado universalmente en el entorno Linux se llama gcc (Gnu C Compiler)
+
+* Se consigue primero el código fuente de la aplicación. En este caso se va a compilar un programa llamado **diction** comprueba la calidad de escritura y edición de archivos de texto. Se hace: ![alt text](image-129.png)![alt text](image-130.png)
+* Para descomprimir el archivo: ![alt text](image-131.png)
+* Los archivos que tienen la extensión c son los archivos que contienen el programa. Es buena idea revisar los archivos **README, NEWS, INSTALL, COPYNG**
+* Los archivos .h son cabeceras, quiere decir que contienen la descripción de las rutinas incluidas en un código fuente o librerías
+* Para empezar a compilar primero se utilza el comando **configure**![alt text](image-132.png)![alt text](image-133.png)
+* Se ejecuta **make** para terminar de compilar el programa 
+* Para instalar el programa, solo resta ejecutar **sudo make install**
+
+# Scripts de shell
+Es un archivo que contiene una serie de comandos que el shell va a leer y ejecutar tal como están. 
+Para escribir scripts de forma correcta y exitosa se encesitan tener en cuneta varias aspectos como permitir al archivo ejecutarse, osea, darle permisos y poner el script donde el shell pueda encontrarlo. Ejemplo: 
+![alt text](image-134.png)
+
+La primera línea que empieza con un **shebang (#!)** se usa para decirle al sistema que interprete debería usar para el script; la segunda línea es un **comentario** y la última es una instrucción de imprimer el mensaje "Hello world". 
+
+Hay que cambiar los permisos del archivo para que pueda ejecutarse: ![alt text](image-135.png)
+
+Para ejecutar el script: ![alt text](image-136.png)
+
+La variable de entorno $PATH es donde el sistema almacena los directorios separados por 2 puntos (:) donde se guardan los ejecutables para iniciarlos. Para poder ejecutar nuestro programa como si fuera un comando más, debe estar guardado en una de estas direcciones, así: ![alt text](image-137.png)
+![alt text](image-138.png)
+![alt text](image-139.png)
 
 
 
