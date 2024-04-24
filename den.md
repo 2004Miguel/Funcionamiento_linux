@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1713803349938
+updated: 1713960545137
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -151,6 +151,7 @@ Hay 2 limitaciones con este tipo de enlaces:
 * IEEE 1003 (API's)
 * XML
 * ROT13(ofuscación de texto)
+* Documento-aqui
 
 
 ## Comandos básicos
@@ -511,7 +512,7 @@ Los lenguajes **de script o interpretados** se traduce línea por línea al leng
 
 El motivo por el que los lenguajes interpretados se popularizaron es porque a medida que un programa crece el tiempo de compilación se vuelve más lento y esté tiempo se reduce con los interpretes.
 
-El **enlazador** son rutinas (librerias) del sistema que hacen tareas comunes como por ejemplo abrir un archivo. La idea es que no se despilfarren recursos por cada programa que puede hacer eso sino establecer una porción de código que todos los programas usen para realizar la tarea.
+El **enlazador** son rutinas (librerias) del sistema que hacen tareas comunes como por ejemplo abrir un     archivo. La idea es que no se despilfarren recursos por cada programa que puede hacer eso sino establecer una porción de código que todos los programas usen para realizar la tarea.
 
 ## Compilando un programa en C
 Para compilar se necesita el compilador, enlazador y make. 
@@ -539,6 +540,16 @@ Para ejecutar el script: ![alt text](image-136.png)
 La variable de entorno $PATH es donde el sistema almacena los directorios separados por 2 puntos (:) donde se guardan los ejecutables para iniciarlos. Para poder ejecutar nuestro programa como si fuera un comando más, debe estar guardado en una de estas direcciones, así: ![alt text](image-137.png)
 ![alt text](image-138.png)
 ![alt text](image-139.png)
+
+En el siguiente script se crea una especie de reporte: 
+![alt text](image-140.png)
+* Profundizar en el "documento-aqui" (es la nomenclatura de **cat <<- _EOF_** [End Of File - Final Del Archivo])
+
+Para crear funciones en el archivo **.bashrc** se hace igual que en un script normal: 
+![alt text](image-141.png).
+
+Las variables para definirlas localmente (que su alcance solo sea en una función) hay que preceder el nombre de la variable con **local**. Así: 
+![alt text](image-142.png)
 
 
 
