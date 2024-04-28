@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1713960545137
+updated: 1714313930881
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -132,7 +132,9 @@ Hay 2 limitaciones con este tipo de enlaces:
 ![alt text](image-28.png) **pag 61**
 
 ## Pendiente de consulta
-* Jerarquía estándar del Sistema de Archivos Linux
+* Jerarquía estándar del Sistema de Archivos Linux (FSSTND Y ficheros)
+![alt text](image-164.png)
+https://blog.alcancelibre.org/staticpages/index.php/estandar-jerarquia-sistema-archivos
 * Formate de texto ASCII
 * Todos los comodines para nombres de archivos
 * Enlaces duros y simbólicos
@@ -152,6 +154,9 @@ Hay 2 limitaciones con este tipo de enlaces:
 * XML
 * ROT13(ofuscación de texto)
 * Documento-aqui
+* Comer ver los repositorios desde donde se van a descargar los paquetes
+* Como agregar nuevos repositorios para la descarga de paquetes
+* Sistema X Window
 
 
 ## Comandos básicos
@@ -551,15 +556,56 @@ Para crear funciones en el archivo **.bashrc** se hace igual que en un script no
 Las variables para definirlas localmente (que su alcance solo sea en una función) hay que preceder el nombre de la variable con **local**. Así: 
 ![alt text](image-142.png)
 
+# Control de flujo: Ramificando con if
+![alt text](image-143.png)
+La estructura del if tiene la siguiente forma: 
+![alt text](image-144.png)
+Para  indicar que una función o un script se ejecutaron de forma correcta, se usa **0** en la salida estándar y si hubo algún problema se usa cualquier otro número
+![alt text](image-145.png)
+## Expresiones test para archivos
+![alt text](image-146.png)
+![alt text](image-147.png)
+![alt text](image-148.png)
+![alt text](image-149.png)
 
+# Test mejorado 
+El operador [[]] admite todas las expresiones que test y también regex (Expresiones regulares)![alt text](image-150.png). 
 
+El operador (()) sirve para evaluar operaciones con enteros. Es verdadera si su resultado es diferente de 0 ![alt text](image-151.png)
 
+# Operaciones lógicas 
+![alt text](image-152.png)
 
+# Leyendo datos
+![alt text](image-153.png)
 
+read puede leer varias variables al mismo tiempo
+**read var1 var2 var3...**
+Si cuando al momento de leer muchas variables se ingresan menos de las que el sistema espera, las otras quedan vacias y si se ingresan más de las que el sistema espera los valores restantes se asignan a la última variable
 
+# Opciones de read 
+![alt text](image-154.png)
+![alt text](image-155.png)
 
+# IFS
+Read entiende que palabras separadas por un espacio es un valor diferente, eso es porque la variable de shell **IFS** está configurada así pero se puede modificar para que el separador sea otro símbolo.
+En el siguiente script se modificó la variable para diferenciar valores con los 2 puntos (:)![alt text](image-156.png)
 
+# While
+![alt text](image-157.png)
 
+Para salir de un bucle se puede usar **break** que termina el bucle y sigue con la siguiente sentencia después del bucle. **Continue** se salta lo que sigue del bucle y continúa con la siguiente iteración. 
+
+# Tracing o traza 
+Para ver verficar que se está ejecutando en el script se puede agregar el argumento x a la primera línea del script para que quede así: **#!/bin/bash -x** esto va a mostrar el resultado y la ejecución del script: 
+Script ![alt text](image-158.png)
+Ejecución: ![alt text](image-159.png)
+
+# Control de flujo: Ramificando con case
+![alt text](image-160.png)
+Ejemplo de uso de case: ![alt text](image-161.png)
+![alt text](image-162.png)
+Para poner varias patrones hay que separarlos con la barra verical **(|)**. Añadir ";;&" al final de una acción, no se termina el bucle sino que se evalua la siguiente condición para ver si coincide o no. Así ![alt text](image-163.png)
 
 
 
