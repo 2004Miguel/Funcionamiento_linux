@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1714313930881
+updated: 1714398103658
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -135,7 +135,7 @@ Hay 2 limitaciones con este tipo de enlaces:
 * Jerarquía estándar del Sistema de Archivos Linux (FSSTND Y ficheros)
 ![alt text](image-164.png)
 https://blog.alcancelibre.org/staticpages/index.php/estandar-jerarquia-sistema-archivos
-* Formate de texto ASCII
+* Formato de texto ASCII
 * Todos los comodines para nombres de archivos
 * Enlaces duros y simbólicos
 * Expansión en el bash y entrecomillado (**pag 51**)
@@ -157,6 +157,7 @@ https://blog.alcancelibre.org/staticpages/index.php/estandar-jerarquia-sistema-a
 * Comer ver los repositorios desde donde se van a descargar los paquetes
 * Como agregar nuevos repositorios para la descarga de paquetes
 * Sistema X Window
+* Que es APT
 
 
 ## Comandos básicos
@@ -606,6 +607,38 @@ Ejecución: ![alt text](image-159.png)
 Ejemplo de uso de case: ![alt text](image-161.png)
 ![alt text](image-162.png)
 Para poner varias patrones hay que separarlos con la barra verical **(|)**. Añadir ";;&" al final de una acción, no se termina el bucle sino que se evalua la siguiente condición para ver si coincide o no. Así ![alt text](image-163.png)
+
+# Parámetros posicionales 
+![alt text](image-165.png)
+![alt text](image-166.png)
+![alt text](image-167.png)
+Se pueden acceder a más de 9 parámetros usando la nomenclatura de ${10}, ${11}, ${12}...
+la variable $# muestra el número de argumentos
+
+# Página 334 se retoma el proyecto de sys_info_page con algunad mejoras
+
+# Bucle for
+![alt text](image-168.png)
+![alt text](image-169.png)
+![alt text](image-170.png)
+
+# bc 
+Es u n programa que permite hacer cálculos matemáticos un poco más complejos que los que permite le shell. Se pueden hacer cálculos desde un archivo escrito en c o interactivamente desde la terminal: 
+![alt text](image-171.png)
+Desde la terminal: 
+![alt text](image-172.png)
+
+# Script para ver cuantos archivos son modificados en una sesión (pag 362)
+El tema de los arrays empieza en la **página 360**
+![alt text](image-173.png)
+
+# Script para ver los archivos, propietarios y grupos dae un directorio
+![alt text](image-175.png)
+
+# Subshell y grupos de comando
+Estas técnicas son usadas para ejecutar más de un comando en una sola instrucción, por ejemplo: 
+![alt text](image-174.png)
+La diferencia de las 2 técnicas es que un grupo de comandos los ejecuta en la sesión actual mientras que un subshell los ejecuta en un subshell, hace una copia de la sesión actual y esa copia se pierde cuando la ejecución finaliza
 
 
 
