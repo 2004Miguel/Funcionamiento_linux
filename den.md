@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1714398103658
+updated: 1714439032547
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -14,7 +14,7 @@ Shell es la forma de referirce a un progrma generico que interpreta comandos.
 bash es un programa de shell que interpreta comandos.
 
 ## Que es un comando ?
-![alt text](image-20.png)
+![alt text](/imagenes/image-20.png)
 
 ## Redireccionamiento I/O
 * Normalmente la salida de un programa en la consola es de 2 tipos: Los resultados del programa (que se mandan a un archivo especial llamado standard output/stdout) y los errores y estados que se produscan (que se van a un archivo especial llamado standard error/stderr). Por defecto tanto la salida estándar como el error estándar no se guardan en el disco duro sino que están enlazados en la pantalla. La entrada de una aplicación se llama standard input/stdin que por defecto está **asociada al teclado**
