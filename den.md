@@ -2,7 +2,7 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1714439032547
+updated: 1714519153156
 created: 1712061762517
 ---
 ## Que es el shell?
@@ -14,7 +14,7 @@ Shell es la forma de referirce a un progrma generico que interpreta comandos.
 bash es un programa de shell que interpreta comandos.
 
 ## Que es un comando ?
-![alt text](/imagenes/image-20.png)
+![alt text](image-20.png)
 
 ## Redireccionamiento I/O
 * Normalmente la salida de un programa en la consola es de 2 tipos: Los resultados del programa (que se mandan a un archivo especial llamado standard output/stdout) y los errores y estados que se produscan (que se van a un archivo especial llamado standard error/stderr). Por defecto tanto la salida estándar como el error estándar no se guardan en el disco duro sino que están enlazados en la pantalla. La entrada de una aplicación se llama standard input/stdin que por defecto está **asociada al teclado**
@@ -158,6 +158,8 @@ https://blog.alcancelibre.org/staticpages/index.php/estandar-jerarquia-sistema-a
 * Como agregar nuevos repositorios para la descarga de paquetes
 * Sistema X Window
 * Que es APT
+* que es dpkg
+* que es una checksum
 
 
 ## Comandos básicos
@@ -639,6 +641,9 @@ El tema de los arrays empieza en la **página 360**
 Estas técnicas son usadas para ejecutar más de un comando en una sola instrucción, por ejemplo: 
 ![alt text](image-174.png)
 La diferencia de las 2 técnicas es que un grupo de comandos los ejecuta en la sesión actual mientras que un subshell los ejecuta en un subshell, hace una copia de la sesión actual y esa copia se pierde cuando la ejecución finaliza
+
+# Extras 
+
 
 
 
