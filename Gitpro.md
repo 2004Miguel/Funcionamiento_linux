@@ -2,7 +2,7 @@
 id: evdy848c0cpufp05spptn6v
 title: Gitpro
 desc: 'Libro escrito por Scott Chacon (uno de los fundadores de GitHub)'
-updated: 1714653942635
+updated: 1715117595253
 created: 1714517141476
 ---
 
@@ -208,6 +208,74 @@ El flujo de trabajo realizado en diferentes ramas se puede ver de una forma grá
 * Recursive
 
 ## Principales problemas al hacer fusiones
+![alt text](image-228.png)
+![alt text](image-229.png)
+
+Con **git mergetool** se pueden usar herramientas gráficas para resolver los conflictos en una fusión
+![alt text](image-230.png)
+
+Después de arreglar los conflictos, para terminar el merge hay que hacer un commit. 
+
+## Gestión de ramas
+![alt text](image-231.png)
+![alt text](image-232.png)
+
+## Flujos de trabajo ramificados
+### Ramas de largo recorrido
+La idea de esta forma de trabajo es tener una rama **main** donde se guarda el código estable y tener otras ramas donde se desarrollan pruebas y otro tipo de trabajo para cuando esté listo, poder fusionarla con la rama main. 
+![alt text](image-233.png)
+![alt text](image-234.png)
+
+### Ramas puntuales
+![alt text](image-235.png)
+![alt text](image-236.png)
+![alt text](image-237.png)
+![alt text](image-238.png)
+
+
+### Ramas remotas
+![alt text](image-239.png)
+![alt text](image-240.png)
+![alt text](image-241.png)
+
+## Seguimiento a las ramas 
+Existen las ramas de seguimiento que son las ramas que tienen que ver con alguna rama del repositorio remoto. Cuando se clona un repositorio, automáticamente se suele crear la rama **master** que hace seguimiento de **origin/master** (remoto origin - rama master)
+![alt text](image-242.png)
+
+Con **git branch -vv** se puede ver información detallada de cada rama
+
+![alt text](image-243.png)
+
+## Eliminar ramas remotas
+**git push nameServidor --delete nameBranch**
+![alt text](image-244.png)
+
+## Reorganizando el trabajo realizado
+ Además de poder fusionar el trabajo usando merge, hay otra manera de fusionar las ramas. La forma como merge hace su trabajo es a 3 bandas, osea, entre las 2 últimas instantáneas de cada rama y el ancestro común a ambas creando una nueva instantánea y la correspodiente confirmación. La forma como la reorganización funciona, hacer un **rabase** es capturar los cambios de una rama y aplicarlos encima de otra
+ ![alt text](image-245.png)
+ ![alt text](image-246.png)
+
+ **NO QUEDÓ CLARO EL TÉRMINO!!!!!!!!!!!!!!!!!!!!!!!!!!**
+
+ **PARA EVITAR PROBLEMAS, NO REORGANIZAR NADA QUE YA HAYA SIDO COMPARTIDO**
+
+# Git en el servidor
+
+![alt text](image-247.png)
+* GitLab
+* GitWeb
+
+# Git en entornos de trabajo distribuidos
+## Flujo de trabajo centralizado 
+El repositorio central admite cambios siempre y cuando la persona esté al día con el server. Si 2 programadores se traen la info del server al local y el primero hace cambios y los sube, el segundo hace cambios no los va a poder subir porque tiene que estar al día con el server, osea que primero se tiene que traer los cambios que hice el primer programador para luego poder subir los propios
+![alt text](image-248.png)
+
+## Flujo de trabajo Administrador-integración
+
+
+
+
+
 
 
 
