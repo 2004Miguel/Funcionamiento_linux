@@ -2,7 +2,7 @@
 id: evdy848c0cpufp05spptn6v
 title: Gitpro
 desc: 'Libro escrito por Scott Chacon (uno de los fundadores de GitHub)'
-updated: 1715117595253
+updated: 1715344752785
 created: 1714517141476
 ---
 
@@ -271,6 +271,156 @@ El repositorio central admite cambios siempre y cuando la persona esté al día 
 ![alt text](image-248.png)
 
 ## Flujo de trabajo Administrador-integración
+![alt text](image-249.png)
+Esta formas de trabajar es muy común en hubs como GitLab o GitHub, permitiendo que cada contribuidor trabaje a su ritmo y que el administrador vaya implementando los cambios cuando sea necesario
+
+## Flujo de trabajo Dictador-Tenientes
+
+![alt text](image-250.png)
+
+## Contribuyendo a un proyecto
+ La forma de contribuir a un proyecto depende de muchos aspectos y es dificil describir solo un métedo de contribuir ya que existen muchas formas de hacerlo. 
+ Las variables que intervienen son: 
+* Conteo contribuyentes activos
+* Flujo de trabajo para el proyecto
+* Acceso de confirmación
+
+### Pequeño equipo privado (página 129)
+Hay que tener en cuenta que cada vez que se vaya a empezar a trabajar sobre los propios cambios hay que empezar con traerse todo lo que esté en el server y hacer lo mismo cada vez que se vaya a mandar (push) al server, asegurarse de que el trabajo esté al día. El flujo de trabajo se vería así: 
+![alt text](image-251.png) 
+
+### Equipo privado administrado
+Esta forma de contribuir se basa en que cada equipo trabaja en su rama particular y después el encargado de fusionar esas ramas a la maestra hace su trabajo
+![alt text](image-252.png)
+De esta manera se hace commit a una rama del servidor pero que se llama distinta en local. La rama local **featureB** hace hace referencia/rastrea a la rama remota **featureBee**
+El flujo de trabajo se ve así: 
+![alt text](image-253.png)
+
+### Proyecto público bifurcado
+Un **fork** es la copia de un repositorio completo en la cuenta de otro usuario
+
+### Proyecto público a través de correo electrónico (pag 146)
+
+## Manteniendo un proyecto
+### Trabajando con ramas puntuales
+ES buena idea probar los nuevos cambios que alguien quiera aportar al proyecto en una rama de prueba (rama puntual) antes de fusionarlos a la rama oficial, por la facilidad de tomar decisiones de desecharlo, posponerlo, etc...
+
+### Aplicando parches recibidos por e-mail
+Hay 2 formas de hacerlo, con apply y con am.
+#### Con apply
+![alt text](image-254.png)
+
+#### Con am
+Es recomendable aplicar parches con **git am** si el parche se creó con format-patch. 
+![alt text](image-255.png)
+![alt text](image-256.png)
+![alt text](image-257.png)
+
+### Recuperando ramas remotas
+Esta forma de mantener un proyecto se basa en que se esté colaborando con otra persona pero ella tiene su propio repositorio, lo que se puede hacer es que tú te graigas una rama de su repositorio a tu local y ver los cambios
+![alt text](image-258.png)
+
+### Decidiendo que introducir
+Una vez se tengan todos los cambios en una rama puntual, se pueden ver las diferencias que hay entre la master y la puntual, así: 
+![alt text](image-259.png)
+Lo que hace es que se toma el primer commit del ancestro en común y el último de la rama puntual para ver las diferencias
+
+### Integrando el trabajo de los colaboradores
+La forma más básica de hacer esto es fusionar las ramas a la rama master: 
+![alt text](image-260.png)
+
+Pero si se tiene un proyecto más grande y de más envergadura es preferible hacer **un ciclo de integración de 2 fases**. La idea es tener 2 ramas principales, de forma que primero se integren los cambios en una rama y luego en la principal
+![alt text](image-261.png)
+![alt text](image-262.png)
+
+## Flujos de trabajo reorganizando o entresacando
+**profundizar en el rebase y un entresacado
+
+## rerere
+reuse recorded resolution (reutilizar resolución grabada). Es un mecanismo que se utiliza para solucionar problemas de integración más fácil, si hay un error al fusionar algo y previamente ya se había solucionado ese error, entonces rerere va a intentar arreglar el error basado en la solución que ya se había hecho. 
+![alt text](image-263.png)
+
+## Preparando una versión 
+![alt text](image-264.png)
+
+# GitHub
+## Llaves SSH
+Se debe especificar el archivo id_rsa.pub
+
+## Bifurcación de proyectos (fork)
+Hacer un fork de un repositorio significa hacer una copia en mi cuenta lo que me convierte en el dueño. Esto es útil cuando solo tenemos permisos de lectura en el proyecto
+
+## Flujo de trabajo de github
+![alt text](image-265.png)
+
+## Creación de un pull request
+Hacer un pull request es hacer una petición al administrador del proyecto para que implemente mis cambios. Una situación como ejemplo: 
+Se quiere contribuir en un proyecto agregando un cambio
+![alt text](image-266.png)
+Luego de hacer el **fork** se prosigue con los siguientes pasos:
+![alt text](image-267.png)
+![alt text](image-268.png)
+
+Ahora, si volvemos al repositorio (al fork) GitHub va a mostrar un aviso para que hagamos un pull request
+![alt text](image-269.png)
+![alt text](image-270.png)
+![alt text](image-271.png)
+![alt text](image-272.png)
+![alt text](image-273.png)
+
+## Pull request avanzados
+
+GitHub nos puede avisar si un pull request se puede fusionar limpiamente o si hay errores. 
+![alt text](image-274.png)
+
+Si surgen problemas con el pull request, una solución puede ser esta
+![alt text](image-275.png)
+
+De esta manera el pull request se autocheckea y avisa si es posible o no el fusionado automático
+![alt text](image-276.png)
+
+## Referencias  
+En un proyecto un pull request y un issues (incidencia) tienen un número identificador único, para referirse a ellos se puede hacer: 
+* \# númeroPull(por ejemplo el issues 3, #3)
+* usuario#número
+* usuario/repo#num
+
+Acá se hace referencia a distintos request: 
+![alt text](image-277.png)
+Al enviarlo se ve así: 
+![alt text](image-278.png)
+
+Una vez se cierra el pull request al que se está haciendo referencia, es fácil identificar el pull request que hizo que este se cerrara
+![alt text](image-279.png)
+
+También se pueden hacer referencias a commits usando el SHA-1
+
+## Markdown
+Es escribir en texto plano pero que luego se convierte en texto con formato. 
+![](image-280.png)
+GitHub añade varias funcionalidades extras a la sintáxis básica del markdown:
+### Listas de tareas
+![alt text](image-281.png)
+![alt text](image-282.png)
+### Fragmentos de código
+![alt text](image-283.png)
+Se puede especificar el lenguaje después de los símbolos ```para intentar hacer el resaltado de la sintáxis
+![alt text](image-284.png)
+### Citas
+Si se quiere responder solo a una parte de un comentario grande que le hicieron, puede citar esa parte así: 
+![alt text](image-285.png)
+![alt text](image-286.png)
+### Emojis
+se puede escribir el nombre de un emoji predecido por 2 puntos(:) y GitHub va a dar sugerencias sobre el que se busca
+![alt text](image-287.png)
+el nombre de un emoji va entre :nombre:
+![alt text](image-288.png)
+![alt text](image-289.png)
+### Imágenes
+Se puede arrastrar y soltar imágenes desde los archivos locales
+![alt text](image-290.png)
+
+
 
 
 
