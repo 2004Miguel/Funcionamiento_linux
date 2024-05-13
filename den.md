@@ -2,9 +2,40 @@
 id: th13t6zh9qgxuou3hsx7p80
 title: La línea de comandos en Linux
 desc: ''
-updated: 1714519153156
+updated: 1715430286637
 created: 1712061762517
 ---
+## Pendiente de consulta
+* Jerarquía estándar del Sistema de Archivos Linux (FSSTND Y ficheros)
+![alt text](image-164.png)
+https://blog.alcancelibre.org/staticpages/index.php/estandar-jerarquia-sistema-archivos
+* Formato de texto ASCII
+* Todos los comodines para nombres de archivos
+* Enlaces duros y simbólicos
+* Expansión en el bash y entrecomillado (**pag 51**)
+* Teletipos
+* Libreria del bash **Readline**
+* Completado programable (Ubuntu)
+* Con script se puede grabar una sesión
+* Como funcionaban las terminales (pc's no personales)
+* Permisos especiales (setuid root, setgid bit, sticky bit)
+* BSD
+* PATH
+* POSIX
+* Código ANSI
+* SHA256
+* IEEE 1003 (API's)
+* XML
+* ROT13(ofuscación de texto)
+* Documento-aqui
+* Comer ver los repositorios desde donde se van a descargar los paquetes
+* Como agregar nuevos repositorios para la descarga de paquetes
+* Sistema X Window
+* Que es APT
+* que es dpkg
+* que es una checksum
+
+
 ## Que es el shell?
 
 Shell es la forma de referirce a un progrma generico que interpreta comandos. 
@@ -131,35 +162,7 @@ Hay 2 limitaciones con este tipo de enlaces:
 ## Comandos de completado
 ![alt text](image-28.png) **pag 61**
 
-## Pendiente de consulta
-* Jerarquía estándar del Sistema de Archivos Linux (FSSTND Y ficheros)
-![alt text](image-164.png)
-https://blog.alcancelibre.org/staticpages/index.php/estandar-jerarquia-sistema-archivos
-* Formato de texto ASCII
-* Todos los comodines para nombres de archivos
-* Enlaces duros y simbólicos
-* Expansión en el bash y entrecomillado (**pag 51**)
-* Teletipos
-* Libreria del bash **Readline**
-* Completado programable (Ubuntu)
-* Con script se puede grabar una sesión
-* Como funcionaban las terminales (pc's no personales)
-* Permisos especiales (setuid root, setgid bit, sticky bit)
-* BSD
-* PATH
-* POSIX
-* Código ANSI
-* SHA256
-* IEEE 1003 (API's)
-* XML
-* ROT13(ofuscación de texto)
-* Documento-aqui
-* Comer ver los repositorios desde donde se van a descargar los paquetes
-* Como agregar nuevos repositorios para la descarga de paquetes
-* Sistema X Window
-* Que es APT
-* que es dpkg
-* que es una checksum
+
 
 
 ## Comandos básicos

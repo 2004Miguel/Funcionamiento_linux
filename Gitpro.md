@@ -2,7 +2,7 @@
 id: evdy848c0cpufp05spptn6v
 title: Gitpro
 desc: 'Libro escrito por Scott Chacon (uno de los fundadores de GitHub)'
-updated: 1715344752785
+updated: 1715605343085
 created: 1714517141476
 ---
 
@@ -419,6 +419,101 @@ el nombre de un emoji va entre :nombre:
 ### Imágenes
 Se puede arrastrar y soltar imágenes desde los archivos locales
 ![alt text](image-290.png)
+
+## Mantenimiento de un proyecto
+### Gestión de los pull request
+Si alguien pide un pull request, al dueño del proyecto le llegará al correo una notificación con un aspecto similar al siguiente: 
+![alt text](image-291.png)
+### Archivos especiales
+El archivo **README**, este archivo puede estar en formatos **README, README.md, README.asciidoc y otros más**, cuanto GitHub detecta este archivo lo muestra en la página principal con su debido rendirazado según su formato. Este archivo normalmente se utiliza para dar información acerca del proyecto
+![alt text](image-292.png).
+
+El otro archivo es **CONTRIBUTING**. Cuando se intente hacer un pull request y GitHub identifique este archivo, se va a hacer la apertura de ese archivo. Donde se indican normas para hacer un pull request
+
+## Screepting en GitHub
+### Enganches (Hooks)
+Las secciones Hooks y Services, de la página de administración del repositorio en Github, es la forma más simple de hacer que GitHub interactúe con sistemas externos.
+
+Para ir a los servicios y hooks disponibles hay que ir a la sección **settings** del repositorio y buscar **web hooks**
+![alt text](image-293.png)
+
+Se puede crear un web hook con un código como este: 
+![alt text](image-294.png)
+
+## La api de GitHub
+Se verá el solo el uso básico. Lo más básico que podemos hacer es una petición GET a una llamada que no necesite autentificación. Por ejemplo, información de solo lectura de un proyecto de código
+abierto. Por ejemplo, si queremos conocer información acerca del usuario “schacon”, podemos ejecutar algo como:
+
+![alt text](image-295.png)
+Solamente se necesita ejecutar la primer línea para conocer el resto de información. Así se ve cuando yo lo ejecuté: 
+![alt text](image-296.png)
+![alt text](image-297.png)
+
+# Herramientas de Git
+## Revision por selección
+Hay varias maneras de seleccionar un commit especifico o un rango.
+### SHA-1 corto
+Git puede identificar un commit sin la necesidad de pasarle el hash completo, con los primeros 4 dígitos es suficiente, siempre y cuando no existan amibgüedades, es decir, que los dígitos usados sean únicos de ese commit. Se puede usar **git log --abrev-commit** para mostrar el hash corto.
+![alt text](image-298.png)
+### Referencias por rama
+Si una rama está apuntando al commit que necesito puedo usar esto: 
+![alt text](image-300.png)
+Los 2 comandos son equivalentes
+### Referencias por ancestros
+Por ejemplo se pueden ver los commits previos de HEAD usando:
+![alt text](image-301.png) O usando: 
+![alt text](image-302.png)
+### Rangos de commits
+Esto se usa para ver **los commits que son alcanzables por una rama peor no por otra** (los cambios que están sin fusionar)
+![ejempo-Rango de commits](image-303.png)
+![alt text](image-304.png)
+### Múltiples puntos
+![alt text](image-305.png)
+### 3 puntos
+Si se quiere ver los commits que no están en ambas ramas se puede usar: 
+![alt text](image-306.png)
+
+## Guardado rápido y limpieza
+si no se quiere hacer un commit de un trabajo a medias pero se quiere cambiar de rama. Ejemplo:
+Se empezó a trabajar en el proyecto y el estado del repositorio es este: 
+![directorio_desordenado](image-307.png)
+En este punto no se quiere hacer commit aún, entonces se puede usar **git stash**
+![alt text](image-308.png)
+Ahora el resultado de git status va a ser: 
+![alt text](image-309.png)
+Para ver los guardados que se han hecho se puede usar: 
+![alt text](image-310.png)
+
+Para acceder a los guardados que se han hecho se usa **git stash apply stash@{num}** num hace referencia al guardado que se ve en la lista con stash list. Si no se especifica un guardado, se va a aplicar el guardado más reciente. 
+![alt text](image-311.png)
+![alt text](image-312.png)
+
+### Creando una rama apartir de un guardado
+Si se tienen un guardado rápido y se quieren probar los cambios antes de hacer commit, se puede crear una rama con lo que guardaste: 
+![alt text](image-313.png)
+
+## Firmando el trabajo
+![alt text](image-314.png)
+### Introducción a GPG
+![alt text](image-315.png)
+## Firmando tags
+![alt text](image-316.png)
+## Verificando Tags
+![alt text](image-317.png)
+## Firmando commits
+![alt text](image-318.png)
+## Verificando firmas en los commits
+![alt text](image-319.png)
+También se pueden configurar los merge y los git pull para que solo acepten commits que estén firmados
+![alt text](image-320.png)
+![alt text](image-321.png)
+
+
+
+
+
+
+
 
 
 
