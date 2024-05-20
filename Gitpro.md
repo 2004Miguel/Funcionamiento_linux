@@ -2,9 +2,21 @@
 id: evdy848c0cpufp05spptn6v
 title: Gitpro
 desc: 'Libro escrito por Scott Chacon (uno de los fundadores de GitHub)'
-updated: 1715605343085
+updated: 1715861455463
 created: 1714517141476
 ---
+
+# Tener en cuenta
+## Las Etiquetas (tags)
+Son referencias que apuntan a referencias concretas en el historial de Git
+### Etiquetas ligeras
+Son nombres que hacen referencia a un punto en concreto en el historial de Git, sin tener mucha más información. Se pueden utilizar de manera privada
+### Etiquetas anotadas
+Estas etiquetas contienen metadatos que dan información como **nombre de la persona que etiqueta, correo electrónico y la fecha** esto es importante para una publicación
+### Como crear una etiqueta
+**git tag \<tagname>** esto crea una etiqueta ligera. **git tag -a \<tagname> -m message** crea una etiqueta anotada y un mensaje asociado  
+### Para ver las etiquetas en un repo
+**git tag**
 
 # Inicio sobre el control de versiones 
 Un controlador de versiones se desarrolló con el fin de hacer que perdure de manera eficiente y sencilla las versiones e histórico de un archivo/proyecto. Guardando el quien, cuando, como, que y donde en una base de datos para posteriormente permitir verificar errores o reucperar cosas. 
@@ -353,6 +365,11 @@ Hacer un fork de un repositorio significa hacer una copia en mi cuenta lo que me
 ## Flujo de trabajo de github
 ![alt text](image-265.png)
 
+### Repositorio remotos
+Si se va a añadir el repositorio remoto en vez de clonarlo hay que añadirlo y depués hacer el pull: 
+* **git remote add origin \<link>**
+* Hacer **git pull origin rama_remota**
+
 ## Creación de un pull request
 Hacer un pull request es hacer una petición al administrador del proyecto para que implemente mis cambios. Una situación como ejemplo: 
 Se quiere contribuir en un proyecto agregando un cambio
@@ -508,20 +525,45 @@ También se pueden configurar los merge y los git pull para que solo acepten com
 ![alt text](image-320.png)
 ![alt text](image-321.png)
 
+## Git grep
+Se usa para buscar coincidencias en el código fuente. Por defecto va a buscar en todos los archivos con commit en el directorio de trabajo. Se puede pasar el argumento -n para mostrar el número de línea donde hay coincidencia. Las busquedas también admiten expresiones regulares
+![alt text](image-322.png)
+![alt text](image-323.png)
 
+## Busqueda del registro de Git
+![alt text](image-324.png)
 
+## Búsqueda de registro de línea
+![alt text](image-325.png)
+Si git no puede encontrar la relación de la función con el lenguaje de programación, también se puede usar expresiones regulares 
+![alt text](image-326.png)
 
+## Reescribiendo la historia
+### Cambiando la última confirmación
+![alt text](image-327.png)
+### Unir confirmaciones
+![alt text](image-328.png)
+### Dividiendo una confirmación
+### Remover un archivo de cada confirmación
+![alt text](image-329.png)
+![alt text](image-330.png)
 
+## Los 3 árboles
+![alt text](image-331.png)
+El **HEAD** se puedo entender más facilmente como la instantánea del último commit. El **índice** se entinede como el área de preparación. El flujo de trabajo de Git es entonces: 
+1. Caundo se crea el repositorio, el HEAD no va a apuntar a ningún lugar porque todavía no hay commits
+2. Cuando se hace **git add** lo que se hace es que el índice (staging) copia lo que halla en el directorio de trabajo
+3. Cuando se hace el commit, HEAD entonces apunta a ese commit
+![alt text](image-332.png)
 
+## El papel del reinicio (reset)
+Lo que **reset** hace es que
+1. **Mueve el HEAD**. Mueve a lo que HEAD apunta, no es lo mismo que cambiar a HEAD en si mismo (como lo hace checkout)
+![alt text](image-333.png)
+![alt text](image-334.png)
+2. **Acutualizando el índice (--mixed)**. El índice va a camibar con la información a la que esté apuntando el HEAD.
+![alt text](image-335.png) 
+3. **Actualizar el directorio de trabajo (--hard)**. Es muy peligroso usar este método ya que de esta manera los datos perdidos se vuelven irrecuperables
+![alt text](image-336.png)
 
-
-
-
-
-
-
-
-
-
-
-
+![alt text](image-337.png)
