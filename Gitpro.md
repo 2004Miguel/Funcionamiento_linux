@@ -2,7 +2,7 @@
 id: evdy848c0cpufp05spptn6v
 title: Gitpro
 desc: 'Libro escrito por Scott Chacon (uno de los fundadores de GitHub)'
-updated: 1715861455463
+updated: 1716329399837
 created: 1714517141476
 ---
 
@@ -567,3 +567,11 @@ Lo que **reset** hace es que
 ![alt text](image-336.png)
 
 ![alt text](image-337.png)
+
+# Personalización de Git
+Para ver más detalle sobre la configuración se puede usar **man git-config**
+
+![alt text](image-340.png)
+De esta manera se configura el editor de texto que git utiliza para ciertas tareas
+
+# Desde este punto se saltó directamente al Apéndice B, donde se recopilan todos los comandos utilizados a lo largo del libro

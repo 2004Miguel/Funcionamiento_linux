@@ -2,7 +2,7 @@
 id: 8i1fj9vd8gbkw2pmatu3sv8
 title: FrontEnd
 desc: ''
-updated: 1716246687313
+updated: 1716298016682
 created: 1716243280661
 ---
 
@@ -31,3 +31,33 @@ Este contenedor soporta la recuperación ordenada de datos LIFO(**Last Input - F
 ## Queue (cola)
 Soporta la recuperación ordenada de datos FIFO(**Firt Input - First Output** / Primero en entrar - Primero en salir) en este caso el orden si importa porque el dato que esté de primero es el que va a tener "toda la atención"
 ![alt text](image-339.png)
+
+# HTML5
+Es un lenguaje de etiquetas que permite definir la estructura de la página web, como los titulos, botones, párrafos, etc. HTML significa **Hypertext Markup Language - Lenguaje de Marcado de Hipertexto**. Para comentar se usa **\<!-- Comentario -->**
+
+# Preguntas
+* Como especificar la página de inicio sino se tiene un index?
+
+## W3C 
+World Wibe Consortium. Este estándar se crea con el fin de que todos los desarrolladores pueden entender el código que alguien más escribió. El sitio oficial es https://www.w3.org/ El estándar actual de HTML se encuentra en https://html.spec.whatwg.org/ 
+
+## Nombrar archivos HTML
+Se utiliza el método **kebab-case** que es todo en minúsculas y separar las palabras por guiones, es recomendable hacerlo en inglés 
+
+# Etiquetas mínimas
+## <!DOCTYPE>
+Esta etiqueta le dice al nevegador que tipo de documento está por desplegar y le indica la versión de HTML que se uso para el desarrollo. Siempre debe ir en la parte superior
+
+## \<html>
+Es la etiqueta raíz dentro de la cual se deberan escribir las demás etiquetas. Se puede especificar el idioma principal con el atributo **lang**. Dentro de esta etiqueta también se debe declarar la **head** y **body**
+
+## \<head>
+Es la primera etiqueta que va después de la raíz (html). En esta etiqueta se van a definir elementos que no tienen efecto visual pero que son descriptivos para el navegador que tienen una relevancia, sin embargo, acá va la etiqueta **tittle** que si tienen un efecto visual
+
+## \<body>
+En esta etiqueta es donde van a estar ubicados la mayoria de elementos que el usuario va a poder ver
+
+# Estructuración básica de textos
+Además de tener en cuenta el uso de las etiquetas de párrafo (p) y de encabezados (h1-h6) hay que darle importancia a las etiquetas de negrita (b- bold), italica (i-cursiva) y underline (u-subrayado). Hay que mencionar que no se puede abusar de estas etiquetas ya que este formato es preferible darlo desde el **css**, en su lugar existen las etiquetas **strong** que se usa para señalar un texto importante en el documento y **em** que indica un fragmento de texto al cúal debe darse énfasis. 
+
+# Estructuración básica de listas
