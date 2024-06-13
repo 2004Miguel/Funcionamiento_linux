@@ -2,7 +2,7 @@
 id: 8i1fj9vd8gbkw2pmatu3sv8
 title: FrontEnd
 desc: ''
-updated: 1716854462400
+updated: 1718234120665
 created: 1716243280661
 ---
 
@@ -32,6 +32,25 @@ Este contenedor soporta la recuperación ordenada de datos LIFO(**Last Input - F
 Soporta la recuperación ordenada de datos FIFO(**Firt Input - First Output** / Primero en entrar - Primero en salir) en este caso el orden si importa porque el dato que esté de primero es el que va a tener "toda la atención"
 ![alt text](image-339.png)
 
+## Linked List (Listas enlazadas)
+Conjunto de **nodos** ordenados que contienen los valores que necesitamos, cada uno tiene un valor y una referencia al siguiente nodo. Hay 2 tipos de linked list, las simples **singly linked list** y las dobles **doubly linked list**. 
+Hay que tener claro los conceptos: 
+* value: es el valor que guardamos
+* head: referencia la primer nodo de la lista
+* tail: referencia al último nodo de la lista
+* next: referencia de un nodo al siguiente nodo
+* prev: referencia al nodo anterior
+
+### syngly linked list
+Cada nodo guarda, **un valor** y **referencia la siguiente nodo**. Ejemplo: 
+Las sygly se observan como un edificio, donde cada piso es un nodo y si quiero ir al piso 5 tengo que pasar por el 1, 2, 3 y 4 para llegar al destino. Esta es una representación: 
+![alt text](image-431.png)
+
+### doubly linked list
+Cada nodo tiene, **referencia al nodo siguiente(next), referencia al nodo anterior (prev), valor del nodo, referencia al primer nodo (head), referencia la último nodo**
+
+![alt text](image-432.png)
+
 # HTML5
 Es un lenguaje de etiquetas que permite definir la estructura de la página web, como los titulos, botones, párrafos, etc. HTML significa **Hypertext Markup Language - Lenguaje de Marcado de Hipertexto**. Para comentar se usa **\<!-- Comentario -->**
 
@@ -48,13 +67,13 @@ Se utiliza el método **kebab-case** que es todo en minúsculas y separar las pa
 ## <!DOCTYPE>
 Esta etiqueta le dice al nevegador que tipo de documento está por desplegar y le indica la versión de HTML que se uso para el desarrollo. Siempre debe ir en la parte superior
 
-## \<html>
+## <html\>
 Es la etiqueta raíz dentro de la cual se deberan escribir las demás etiquetas. Se puede especificar el idioma principal con el atributo **lang**. Dentro de esta etiqueta también se debe declarar la **head** y **body**
 
-## \<head>
+## <head\>
 Es la primera etiqueta que va después de la raíz (html). En esta etiqueta se van a definir elementos que no tienen efecto visual pero que son descriptivos para el navegador que tienen una relevancia, sin embargo, acá va la etiqueta **tittle** que si tienen un efecto visual
 
-## \<body>
+## <body\>
 En esta etiqueta es donde van a estar ubicados la mayoria de elementos que el usuario va a poder ver
 
 # Estructuración básica de textos
@@ -71,7 +90,7 @@ Las listas ordenadas tienen algunos atributos que pueden ser utiles:
 ![alt text](image-344.png)
 
 ## Listas de definiciones
-Se usa para relacionar términos y sus definiciones. Para abrir una lista de este tipo se usa **\<dl>**, para indicar un término en la lista se usa **\<dt>** y para especificar la definición se usa **\<dd>**
+Se usa para relacionar términos y sus definiciones. Para abrir una lista de este tipo se usa **\<dl\>**, para indicar un término en la lista se usa **\<dt\>** y para especificar la definición se usa **\<dd\>**
 ![alt text](image-343.png)
 
 # Hipervínculos
@@ -226,24 +245,233 @@ Hoja de trampa: https://learntheweb.courses/topics/html-semantics-cheat-sheet/
  Se usa para marcar el pie de una sección o de un documento
 
  # CSS
+ Cascading Style Sheets - Hojas de estilo en cascada 
+
+ # Selectores
+ Es la parte del código css que indica a que elemento html se le va a aplicar el estilo
+ ![alt text](image-375.png)
+
+## Selector de elemento \<tag>
+Es el elemento html explícito al que se le va a aplicar el estilo 
+![alt text](image-376.png)
+
+## Selector de clase (.)
+Cualquier elemento html que en el atributo **class** tenga el nombre de la clase que se le va a aplicar el estilo, será modificado
+![alt text](image-377.png)
+
+## Selector id (#)
+El estilo se aplicará a cualquier elemento html que en el atributo **id** coincida con el estilo. Solo se ve utilizar esta propiedad si en el documento hay algún estilo muy particular que se debe aplicar a un elemento
+![alt text](image-378.png)
+
+## pseudoclase (:)
+Las pseudoclases dependen del elemento porque **todos no tienen los mismos**. Afectan al estado de un elemento según lo que se haga. Por ejemplo cambiar el color de un botón cuando el mouse esté sobre él 
+![alt text](image-379.png)
+
+## pseudoelementos (::)
+Modifican el aspecto interno de la etiqueta. 
+![alt text](image-380.png)
+
+## Selector agrupados
+El estilo se le aplica a la clase h1 y special   
+![alt text](image-447.png)
+
+## Selector de atributo 
+El estilo se aplica si un atributo está presente en el elemento o si el atributo tiene un valor específico   
+![alt text](image-448.png)
+![alt text](image-449.png)
+
+## Combinadores
+El estilo se le aplica a los parrafos hijos directos de article
+![alt text](image-450.png)
+
+El siguiente estilo solo se le aplica al parrafo que hay después de un h1
+![alt text](image-451.png)
+
+Acá se seleccionan todos los elementos p que están después de un h1, sin importar que halla otros elementos entre un h1 y p
+![alt text](image-452.png)
+
+**Hay muchos selectores** 
+https://www.w3schools.com/cssref/css_selectors.php
+
+# Implementación de css
+## inline
+Son los estilos que se pueden aplicar a una etiqueta con el atributo **style**. **Es recomendable no usar este método para aplicar estilos ya que ensucia la estructura html**
+![alt text](image-381.png)
+
+## internal css
+Son estilos dentro del documento html pero dentro de las etiquetas **\<style>\</style>**. Tampoco es recomendable usar este método para aplicar estilos
+![alt text](image-382.png)
+
+## external css
+Es la manera más recomendada para aplicar estilos, se basa en un documentos .css que se encarga de gestionar todos los estilos del documento de html. Se enlazan con la etiqueta en el head \<link rel="stylesheet" href="">
+
+# Especificidad
+Marca la importancia que tiene un estilo a la hora de aplciarse a un elemento dependiendo del lugar donde fue definido y el selector usado. La jerarquía de los selectores es la siguiente: 
+![alt text](image-383.png)
+
+Para calcular la especificidad hay que tener en cuenta
+![alt text](image-384.png)
+![alt text](image-385.png)
+
+Calculadora de especificidad https://www.codecaptain.io/tools/css-specificity-calculator
+
+# Modelo de caja o box model
+Es la forma en la que estan delimitados los elementos html. Hay 2 tipos de elementos: 
+## Elementos en línea 
+Son todos aquellos que conviven uno junto al otro sin generar saltos de línea como img, strong, span
+
+## Elementos de bloque 
+Representan elementos que implican un bloque lógico aislado, debe llevar un espacio antes y después de su aparición como las etiquetas div, p, article y section. 
+
+## Display
+Con la propiedad **display** de css es posible modificar el comportamiento de estos elementos
+![alt text](image-386.png). 
+* inline
+* block
+* flex, permite maquetar de una manera más fácil las páginas. Hay un contenedor llamado **flexbox** que contiene la propiedad **display: flex**, desde ese contenedor se podrá: 
+![alt text](image-404.png)
+Esto permite diseños flexibles, alineación de elementos y reordenar contenido sin tocar el código HTML
+
+## Elementos básicos de flexbox
+![alt text](image-405.png)
+* item: son los cuadros verdes, lo que está dentro del contenedor
+* eje principal (barra morada) es la orientación de lso items
+
+Para manipular la dirección y comportamiento de los items del flexbox se usan las propiedades **flex-direction y flex-wrap**, flex wrap permite que los items no se salgan o sí dependiendo del valor. 
+![alt text](image-406.png)
+![alt text](image-407.png)
+Así se ve un contenedor con **flex-wrap: wrap**, el contenedor crece para permitir que los items quepan, en cambio con **flex-wrap: nowrap** los elementos se ponen más pequeños: 
+![alt text](image-427.png)
+![alt text](image-428.png)
+La propiedad de **justify-content** permite acomodar los items dentro del contenedor con respecto al eje principal
+![alt text](image-408.png)
+![alt text](image-409.png)
+![alt text](image-410.png)
+![alt text](image-411.png)
+![alt text](image-412.png)
+![alt text](image-413.png)
+**align-items** permite acomodar los items con respecto al eje secundario
+![alt text](image-414.png)
+![alt text](image-415.png)
+![alt text](image-416.png)
+![alt text](image-417.png)
+![alt text](image-418.png)
+![alt text](image-419.png)
+
+Las propiedades anteriores son propiedades que se aplican al **contenedor** excepto **align-self** que se aplica a los items, las siguientes propiedades se aplican a los items. Así se vería align-self: 
+![alt text](image-429.png)
+El contenedor tiene definido **align-items: flex-end** (osea que los elementos están ordenados en posición horizontal así que el eje secudnario es el vertical) pero los elementos 1 y 4 tienen la propiedad **align-self: flex-start** acomoda los elementos respecto al eje secundario lo que provoca ese cambio 
+![alt text](image-420.png)
+Profundizar como funciona esta propiedad
+![alt text](image-421.png)
+![alt text](image-422.png)
+![alt text](image-423.png)
+![alt text](image-424.png)
+![alt text](image-425.png)
+![alt text](image-426.png)
+
+# Tipografía 
+![alt text](image-387.png)
+Google tiene un repertorio de fuentes en su producto gratuito **Google fonts**. Para asegurarse de que la tipografía se cargue exitosamente, se tienen 2 opciones: 
+## Descargar localmente la fuente
+![alt text](image-388.png)
+ 
+## CDN
+![alt text](image-389.png)
+Este ejemplo es de Google font
+
+## Tamaño 
+Los tamaños de la tipografía se puede especificar con: 
+![alt text](image-390.png)
+
+## Medidas absolutas
+Representan un tamaño específico
+![alt text](image-391.png)
+
+## Medida relativa
+![alt text](image-392.png)
+
+## Medida específica
+![alt text](image-393.png)
+
+Solamente con la propiedad **font-size** se puede específicar de diferentes formas el tamaño
+
+## Estilo de la tipografía
+![alt text](image-394.png)
+
+# Peso de la tipografía 
+Se refiere al grosor de la letra
+## Valores abosolutos
+![alt text](image-395.png)
+
+## Valores relativos
+![alt text](image-396.png)
+
+## Númericos
+![alt text](image-397.png)
+
+El grosor se define en el atributo **font-weight**
 
 
+# Backgroun image
+object fit le dice a la imágen como redimensionarse en su contenedor para caber. Puede ser containe, cover, fill, none, scale-down
+* Fill, este es el valor por defecto de la propiedad **object fit**. La imágen cambia de tamaño para llenar la dimensión dada, de ser necesario la imágen se aplasta o se estira para que quepa en el contenedor
+* contain, la imágen mantiene su relación de aspecto pero se cambia de tamaño para ajustarse a la dimensión dada
+* cover, la imágen mantiene su relación de aspecto y llena la dimensión dada. La imágen se cortara para ajustarse
+* none, la imágen no cambia de tamaño
+* scale down, la imágen se reduce a la versión más pequeña de none o containe
 
+Para especificar las dimensiones de una imágen se usan los atributos width y height que es ancho y alto
 
+# Inherit
+Es un valor permitido en todas las propiedades de css. Hce que el elemento al cual se le aplica tome el valor calculado de la propiedad de su elemento padre
 
+# Decorar una lista
+![alt text](image-399.png)
+![alt text](image-400.png)
+![alt text](image-401.png)
+![alt text](image-402.png)
+![alt text](image-403.png)
 
+# Maquetación 
+Es la etapa en la que se estrucutra, se ordena y distribuyen los elementos del sitio web como menús, imágenes, botones, videos, enlaces, titulos, etc. 
 
+# Grid  
+css grid layout permite hacer las páginas más flexibles dependiendo del tamaño de la pantalla. Se puede organizar el contenido en filas y columnas. Para usar un diseño grid, hay que definir el display del contenedor como **grid**. 
+**grid-template-rows:** define cuantas filas va a tener la tabla, **grid-template-columns:** define cuantas columnas tendrá la tabla, **grid-template-areas** define el nombre de cada cuadriculo. Por ejemplo: 
+![alt text](image-433.png)
+Este es el result
+![alt text](image-434.png)
+O también puede ser: 
+![alt text](image-435.png)
+![alt text](image-436.png)
 
+# Responsive
 
+Técnica de diseño web. NO importa desde que dispositivo se acceda a la página, siempre se va a mostrar el contenido de manera correcta
 
+# Media queries
+Con esta técnica se pueden definir estilos completamente diferentes dependiendo del tamaño del dispositivo
+![alt text](image-437.png)
+![alt text](image-438.png)
+![alt text](image-439.png)
+![alt text](image-440.png)
+![alt text](image-441.png)
+![alt text](image-442.png)
+ Por ejemplo: 
+ Si la pantalla tiene un ancho mínimo de 900px:
+ ![alt text](image-443.png)
+así se ve:
+![alt text](image-444.png)
+Y si la pantalla tiene un ancho máximo de 700px: 
+![alt text](image-445.png)
+![alt text](image-446.png)
 
+# Librerias CSS
+![alt text](image-453.png)
+![alt text](image-454.png)
 
-
-
-
-
-
-
+# Angular
 
 
 
