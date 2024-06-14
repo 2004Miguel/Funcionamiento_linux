@@ -2,7 +2,7 @@
 id: sv85v21n9fa3d5uzjplavzc
 title: English
 desc: ''
-updated: 1718143985558
+updated: 1718319812270
 created: 1716554726015
 ---
 
@@ -29,4 +29,5 @@ handkerchief: bufanda
 loudspeaker: parlante
 hear: escuchar
 hurt: lesión 
+gripa: flur
 

@@ -2,7 +2,7 @@
 id: 8i1fj9vd8gbkw2pmatu3sv8
 title: FrontEnd
 desc: ''
-updated: 1718234120665
+updated: 1718367949630
 created: 1716243280661
 ---
 
@@ -470,6 +470,36 @@ Y si la pantalla tiene un ancho máximo de 700px:
 # Librerias CSS
 ![alt text](image-453.png)
 ![alt text](image-454.png)
+
+# Patrón de nombramiento BEM
+Es una metodología de trabajo ágil la cúal presenta una estructura para el nombramiento de las clases. BEM significa **Block, Element y Modifier**. Un bloque es la unidad más grande en la estructura de código (como un contenedor) puede ser un footer, main, nav o header; el elemento es un fragmento del bloque, no puede existir por si solo y el modificador permite cambiar las propiedades del bloque o del elemento
+![alt text](image-455.png)
+![alt text](image-456.png)
+![alt text](image-457.png)
+
+# SASS
+syntactically Awesome StyleSheet. Se considera como un potenciador de hojas de estilo y es una extensión de css(prepocesador de css), soluciona el problema de la **repetición de código**. SASS necesita ser transpilado a css.
+
+# Caracteristicas de sass
+
+variables
+![alt text](image-458.png)
+
+Anidamiento
+![alt text](image-459.png)
+
+import y partials
+Estos 2 métodos permiten importar archivos css o sass para reutilizar el código que ya se hizo. Aunque hay diferencias entre los 2 métodos. 
+![alt text](image-460.png)
+
+Mixins
+Son funciones   
+![alt text](image-461.png)
+
+## preguntas
+* Empaquetador ?
+* Dart?
+* Webpack?
 
 # Angular
 
